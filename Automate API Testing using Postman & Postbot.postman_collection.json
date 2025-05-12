@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "a35c4c57-8008-429b-8d57-497dedf80eeb",
 		"name": "Automate API Testing using Postman & Postbot",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "37224204"
 	},
 	"item": [
@@ -49,23 +49,11 @@
 					"request": {
 						"auth": {
 							"type": "apikey",
-							"apikey": [
-								{
-									"key": "value",
-									"value": "reqres-free-v1",
-									"type": "string"
-								},
-								{
-									"key": "key",
-									"value": "x-api-key",
-									"type": "string"
-								},
-								{
-									"key": "in",
-									"value": "header",
-									"type": "string"
-								}
-							]
+							"apikey": {
+								"value": "reqres-free-v1",
+								"key": "x-api-key",
+								"in": "header"
+							}
 						},
 						"method": "POST",
 						"header": [
@@ -84,18 +72,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "https://reqres.in/api/register",
-							"protocol": "https",
-							"host": [
-								"reqres",
-								"in"
-							],
-							"path": [
-								"api",
-								"register"
-							]
-						}
+						"url": "https://reqres.in/api/register"
 					},
 					"response": []
 				},
@@ -139,23 +116,11 @@
 					"request": {
 						"auth": {
 							"type": "apikey",
-							"apikey": [
-								{
-									"key": "value",
-									"value": "reqres-free-v1",
-									"type": "string"
-								},
-								{
-									"key": "key",
-									"value": "x-api-key",
-									"type": "string"
-								},
-								{
-									"key": "in",
-									"value": "header",
-									"type": "string"
-								}
-							]
+							"apikey": {
+								"value": "reqres-free-v1",
+								"key": "x-api-key",
+								"in": "header"
+							}
 						},
 						"method": "POST",
 						"header": [
@@ -174,18 +139,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "https://reqres.in/api/register",
-							"protocol": "https",
-							"host": [
-								"reqres",
-								"in"
-							],
-							"path": [
-								"api",
-								"register"
-							]
-						}
+						"url": "https://reqres.in/api/register"
 					},
 					"response": []
 				},
@@ -229,23 +183,11 @@
 					"request": {
 						"auth": {
 							"type": "apikey",
-							"apikey": [
-								{
-									"key": "value",
-									"value": "reqres-free-v1",
-									"type": "string"
-								},
-								{
-									"key": "key",
-									"value": "x-api-key",
-									"type": "string"
-								},
-								{
-									"key": "in",
-									"value": "header",
-									"type": "string"
-								}
-							]
+							"apikey": {
+								"value": "reqres-free-v1",
+								"key": "x-api-key",
+								"in": "header"
+							}
 						},
 						"method": "POST",
 						"header": [
@@ -264,18 +206,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "https://reqres.in/api/register",
-							"protocol": "https",
-							"host": [
-								"reqres",
-								"in"
-							],
-							"path": [
-								"api",
-								"register"
-							]
-						}
+						"url": "https://reqres.in/api/register"
 					},
 					"response": []
 				}
@@ -302,10 +233,10 @@
 									"\r",
 									"console.log(responseData);\r",
 									"console.log(\"After stringify: \" + JSON.stringify(responseData));\r",
-									"console.log(pm.variables.get(\"expectedResponeToContain\"))\r",
+									"console.log(pm.variables.get(\"expectedResponseToContain\"))\r",
 									"\r",
 									"pm.test(`${pm.variables.get(\"verificationMessage\") } - email: ${pm.variables.get(\"email\")} - password: ${pm.variables.get(\"password\")}` , function () {\r",
-									"    pm.expect(JSON.stringify(responseData)).contains(pm.variables.get(\"expectedResponeToContain\"))\r",
+									"    pm.expect(JSON.stringify(responseData)).contains(pm.variables.get(\"expectedResponseToContain\"))\r",
 									"})\r",
 									"\r",
 									""
@@ -330,8 +261,11 @@
 									"\r",
 									"const verificationData = pm.iterationData.get(\"verificationData\");\r",
 									"pm.variables.set(\"verificationMessage\", verificationData.message);\r",
+									"console.log(verificationData.message);\r",
 									"pm.variables.set(\"expectedResponseCode\", verificationData.expectedResponseCode);\r",
-									"pm.variables.set(\"expectedResponeToContain\", verificationData.expectedResponeToContain);\r",
+									"console.log(verificationData.expectedResponseCode);\r",
+									"pm.variables.set(\"expectedResponseToContain\", verificationData.expectedResponseToContain);\r",
+									"console.log(verificationData.expectedResponseToContain);\r",
 									"\r",
 									"\r",
 									"\r",
@@ -345,23 +279,11 @@
 					"request": {
 						"auth": {
 							"type": "apikey",
-							"apikey": [
-								{
-									"key": "value",
-									"value": "reqres-free-v1",
-									"type": "string"
-								},
-								{
-									"key": "key",
-									"value": "x-api-key",
-									"type": "string"
-								},
-								{
-									"key": "in",
-									"value": "header",
-									"type": "string"
-								}
-							]
+							"apikey": {
+								"value": "reqres-free-v1",
+								"key": "x-api-key",
+								"in": "header"
+							}
 						},
 						"method": "POST",
 						"header": [],
@@ -374,18 +296,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "https://reqres.in/api/register",
-							"protocol": "https",
-							"host": [
-								"reqres",
-								"in"
-							],
-							"path": [
-								"api",
-								"register"
-							]
-						}
+						"url": "https://reqres.in/api/register"
 					},
 					"response": []
 				}
@@ -480,23 +391,11 @@
 					"request": {
 						"auth": {
 							"type": "apikey",
-							"apikey": [
-								{
-									"key": "value",
-									"value": "reqres-free-v1",
-									"type": "string"
-								},
-								{
-									"key": "key",
-									"value": "x-api-key",
-									"type": "string"
-								},
-								{
-									"key": "in",
-									"value": "header",
-									"type": "string"
-								}
-							]
+							"apikey": {
+								"value": "reqres-free-v1",
+								"key": "x-api-key",
+								"in": "header"
+							}
 						},
 						"method": "POST",
 						"header": [],
@@ -509,16 +408,76 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUrl}}/api/register",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"register"
-							]
+						"url": "{{baseUrl}}/api/register"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login successfully",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({\r",
+									"url: pm.environment.get(\"baseUrl\") + \"/api/register\",\r",
+									"method: \"POST\",\r",
+									"header:{\r",
+									"    \"Content-Type\": \"application/json\",\r",
+									"     \"x-api-key\": \"reqres-free-v1\"\r",
+									"    },\r",
+									"body:{\r",
+									"    mode:\"raw\",\r",
+									"    raw:JSON.stringify({\r",
+									"        \"email\":\"eve.holt@reqres.in\",\r",
+									"        \"password\":\"testpassword\",\r",
+									"    })\r",
+									"}\r",
+									"}, function (err, response) {\r",
+									"    if (err) {\r",
+									"      console.log(err);\r",
+									"    }else{\r",
+									"        const jsonData = response.json();\r",
+									"        console.log(jsonData);\r",
+									"        console.log(jsonData.email);\r",
+									"        console.log(jsonData.password);\r",
+									"        pm.collectionVariables.set(\"email\", jsonData.email);\r",
+									"        pm.collectionVariables.set(\"password\", jsonData.token);\r",
+									"    }\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "reqres-free-v1",
+								"key": "x-api-key",
+								"in": "header"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/login"
 					},
 					"response": []
 				}
@@ -552,6 +511,14 @@
 			"key": "baseUrl",
 			"value": "https://reqres.in",
 			"type": "string"
+		},
+		{
+			"key": "email",
+			"value": ""
+		},
+		{
+			"key": "password",
+			"value": ""
 		}
 	]
 }
